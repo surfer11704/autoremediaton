@@ -23,7 +23,7 @@
     uri:
       url: "{{ dynatrace_environment_url }}{{ dt_infrastructure_api }}processes/{{ dt_entity_id|upper }}"
       method: GET
-      validate_certs: no
+      validate_certs: yes
       return_content: yes
       headers:
         Content-Type: "application/json"
