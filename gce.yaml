@@ -13,5 +13,5 @@
         zone: "{{ zone }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
-        status: RUNNING
+        status: TERMINATED
       delegate_to: localhost
