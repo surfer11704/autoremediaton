@@ -20,4 +20,5 @@
       command: /usr/bin/pkill -f 'java'
       ignore_errors: yes
       delegate_to: "34.71.145.238"
+      auth_kind: serviceaccount
       
