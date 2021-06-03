@@ -23,7 +23,7 @@
       google.cloud.gcp_compute_disk:
         name: disk-instance
         size_gb: 20
-        source_image: projects/tdpm-310914/global/images/image-1
+        source_image: projects/tdpm-310914/global/images/training-image
         zone: "{{ zone }}"
         project: "{{ project }}"
         state: present
