@@ -26,7 +26,6 @@
         project: "{{ project }}"
         auth_kind: serviceaccount
       delegate_to: localhost
-      set_fact:
-        dummy: value # Just to make some task without output
-      with_items:
-        - tower_response=>{{ tower_response | to_json }}<=
+      register: gcp
+      
+      
