@@ -19,15 +19,12 @@
         status: TERMINATED
       delegate_to: localhost
       
-    - name: get info on an image
-      gcp_compute_image_info:
-        project: "{{ project }}"
-        auth_kind: serviceaccount
-      delegate_to: localhost
-      register: gcp
-      
-    - name: print all returned values
-      debug:
-        msg: "{{ gcp.resources }}"
-      
+    - name: Provision our Virtual Machine
+      gce:
+          instance_name: training-2
+          machine_type: {{ machineType }}
+          one: "{{ zone }}"
+          project: "{{ project }}"
+          auth_kind: serviceaccount
+          image: image-1
       
