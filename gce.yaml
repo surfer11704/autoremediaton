@@ -9,7 +9,7 @@
   - name: detroy instance
     gcp_compute_instance:
       state: absent
-      name: "{{ host }}"
+      name: "easytravel-tmp"
       zone: "{{ zone }}"
       project: "{{ gcp_project }}"
       auth_kind: "{{ gcp_cred_kind }}"
