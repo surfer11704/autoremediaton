@@ -8,23 +8,36 @@
 
   tasks:
 
-    - name: Start a GCP VM instance which is currently stopped
-      gcp_compute_instance:
-        name: "{{ name }}"
-        deletion_protection: no
-        machine_type: "{{ machineType }}"
-        zone: "{{ zone }}"
-        project: "{{ project }}"
-        auth_kind: serviceaccount
-        status: TERMINATED
-      delegate_to: localhost
+#    - name: Start a GCP VM instance which is currently stopped
+#      gcp_compute_instance:
+##        name: "{{ name }}"
+ #       deletion_protection: no
+ #       machine_type: "{{ machineType }}"
+ ##       zone: "{{ zone }}"
+ #       project: "{{ project }}"
+ #       auth_kind: serviceaccount
+ #       status: TERMINATED
+ #     delegate_to: localhost
+    - name: create a disk
+      google.cloud.gcp_compute_disk:
+        name: disk-instance
+        size_gb: 50
+        source_image: projects/tdpm-310914/global/images/image-1
+        zone: us-central1-a
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        service_account_file: "{{ gcp_cred_file }}"
+        state: present
+      register: disk
       
     - name: create a instance
       gcp_compute_instance:
           name: training-n
           machine_type: e2-medium
           disks:
-              source-image: projects/tdpm-310914/global/images/image-1
+          - auto_delete: 'true'
+            boot: 'true'
+            source: "{{ disk }}"
           network_interfaces:
               - network: default
           zone: "{{ zone }}"
