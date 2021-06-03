@@ -14,7 +14,7 @@
         disks:
           - auto_delete: 'false'
             boot: 'true'
-            source: "{{ disk }}"
+            source: "{{ disks }}"
         network_interfaces:
         - network:
           access_configs:
