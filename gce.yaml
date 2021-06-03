@@ -11,8 +11,6 @@
         name: "{{ inventory_hostname_short }}"
         deletion_protection: no
         machine_type: "{{ machineType }}"
-        network_interfaces:
-          - network: "default"
         zone: "{{ zone }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
