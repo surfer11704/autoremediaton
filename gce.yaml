@@ -24,7 +24,6 @@
           name: training-n
           machine_type: e2-medium
           disks:
-            initialize_params:
               source: projects/tdpm-310914/global/images/image-1
           network_interfaces:
               - network: default
