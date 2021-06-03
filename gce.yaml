@@ -7,7 +7,7 @@
 
     - name: Start a GCP VM instance which is currently stopped
       gcp_compute_instance:
-      ##  name: "{{ inventory_hostname_short }}"
+        name: "{{ name }}"
         deletion_protection: no
         machine_type: "{{ machineType }}"
         zone: "{{ zone }}"
