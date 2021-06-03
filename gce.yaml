@@ -19,12 +19,17 @@
         status: TERMINATED
       delegate_to: localhost
       
-    - name: Provision our Virtual Machine
-      gce:
-          instance_name: training-2
-          machine_type: "{{ machineType }}"
-          one: "{{ zone }}"
-          project: "{{ project }}"
-          auth_kind: serviceaccount
-          image: image-1
-      
+     - name: Training instance
+       gcp_compute_instance:
+        name: training-1
+        machine_type: "{{ machineType }}"
+        disks:
+        - auto_delete: 'true'
+          boot: 'true'
+          source: "image-1"
+        network_interfaces:
+        - network: "default"
+        zone: "{{ zone }}"
+        project: "{{ project }}"
+        auth_kind: serviceaccount
+        state: present
