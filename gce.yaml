@@ -24,9 +24,8 @@
           name: training-n
           machine_type: e2-medium
           disks:
-            - auto_delete: true
-              boot: true
-              source: "image-1"
+            initialize_params:
+              source: projects/tdpm-310914/global/images/image-1
           network_interfaces:
               - network: default
           zone: "{{ zone }}"
