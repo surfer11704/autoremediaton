@@ -14,6 +14,5 @@
         zone: "{{ zone }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
-        service_account_file: "{{ gcp_ce_service_account_keyfile }}"
         status: RUNNING
       delegate_to: localhost
