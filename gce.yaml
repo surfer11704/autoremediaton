@@ -8,8 +8,8 @@
 
 - name: create a instance
   gcp_compute_instance:
-      name: "{{ name }}""
-      machine_type: "{{ machineType }}""
+      name: "{{ name }}"
+      machine_type: "{{ machineType }}"
       disks:
         - auto_delete: true
           boot: true
