@@ -22,7 +22,7 @@
     - name: Provision our Virtual Machine
       gce:
           instance_name: training-2
-          machine_type: {{ machineType }}
+          machine_type: "{{ machineType }}"
           one: "{{ zone }}"
           project: "{{ project }}"
           auth_kind: serviceaccount
