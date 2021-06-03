@@ -5,13 +5,14 @@
   
   vars:
     auth_kind: serviceaccount
+    ansible_user: easytravel
 
   tasks:
 
     - name: Run SSH command
       command: /usr/bin/pkill -f 'java'
       delegate_to: 34.91.229.240  
-      ansible_user: easytravel
+      
 
     - name: Start a GCP VM instance which is currently stopped
       gcp_compute_instance:
