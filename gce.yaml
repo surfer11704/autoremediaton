@@ -17,5 +17,7 @@
         status: RUNNING
       delegate_to: localhost
       
-msg: "System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}"
-msg: "{{ gcp_ce_machine_type }}"
+-debug
+  msg: "System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}"
+-debug
+  msg: "{{ gcp_ce_machine_type }}"
