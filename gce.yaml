@@ -26,7 +26,6 @@
         source_image: projects/tdpm-310914/global/images/image-1
         zone: "{{ zone }}"
         project: "{{ project }}"
-        auth_kind: serviceaccount
         state: present
       delegate_to: localhost
       register: disk
