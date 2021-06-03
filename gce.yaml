@@ -19,5 +19,5 @@
     - name: Stop easyTravel processses
       command: /usr/bin/pkill -f 'java'
       ignore_errors: yes
-      delegate_to: "{{ name }}"
+      delegate_to: "10.164.0.6"
       
