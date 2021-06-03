@@ -11,12 +11,12 @@
         name: "{{ inventory_hostname_short }}"
         deletion_protection: no
         machine_type: "{{ machineType }}"
-        disks:
-        - autoDelete: true
-          boot: true
-          deviceName: easytravel-1
-          diskSizeGb: '20'
-          type: PERSISTENT
+        boot_disk:
+          device_name:  "easytravel-1"
+          initialize_params:
+            image: "centos-7-v20210512"
+        network_interface:
+          network: "default"
         zone: "{{ zone }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
