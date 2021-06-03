@@ -28,4 +28,8 @@
       delegate_to: localhost
       register: gcp
       
+    - name: print all returned values
+      debug:
+        msg: "{{ gcp }}"
+      
       
