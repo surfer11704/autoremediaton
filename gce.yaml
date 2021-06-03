@@ -6,6 +6,7 @@
   vars:
     auth_kind: serviceaccount
     ansible_user: easytravel
+    ansible_password: easytravel
 
   tasks:
 
