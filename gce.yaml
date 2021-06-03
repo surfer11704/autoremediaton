@@ -1,28 +1,17 @@
 ---
 - name: Start a GCP instance which is currently stopped
-  strategy: debug
   hosts: 10.164.0.6
   gather_facts: false
 
   tasks:
 
-   - name: Shut down a GCP instance temporarily
+    - name: Start a GCP VM instance which is currently stopped
       gcp_compute_instance:
         name: "{{ inventory_hostname_short }}"
         deletion_protection: no
         machine_type: "{{ machineType }}"
-        disks:
-          - auto_delete: 'false'
-            boot: 'true'
-            source: "{{ disks }}"
-        network_interfaces:
-        - network:
-          access_configs:
-          - name: External NAT
-            nat_ip:
-            type: ONE_TO_ONE_NAT
         zone: "{{ zone }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
-        status: TERMINATED
+        status: RUNNING
       delegate_to: localhost
