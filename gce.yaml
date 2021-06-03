@@ -26,7 +26,7 @@
           disks:
             - auto_delete: true
               boot: true
-              source: image-1
+              source: "image-1"
           network_interfaces:
               - network: default
           zone: "{{ zone }}"
