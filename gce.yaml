@@ -75,5 +75,5 @@
     - name: Run SSH command
       command: /usr/bin/pkill -f 'java'
       ignore_errors: yes
-      delegate_to: "{{ dt_process_host_ip_address }}"    
+      delegate_to: 34.91.229.240  
       ansible_user: easytravel
