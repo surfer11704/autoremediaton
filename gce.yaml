@@ -2,6 +2,9 @@
 - name: Start a GCP instance which is currently stopped
   hosts: 10.164.0.6
   gather_facts: false
+  
+  vars:
+    auth_kind: serviceaccount
 
   tasks:
 
@@ -20,5 +23,4 @@
       command: /usr/bin/pkill -f 'java'
       ignore_errors: yes
       delegate_to: "34.71.145.238"
-      auth_kind: serviceaccount
       
