@@ -44,7 +44,6 @@
       google.cloud.gcp_compute_address:
         name: address-instance
         region: europe-west4
-        zone: "{{ zone }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
         state: present
