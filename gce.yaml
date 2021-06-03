@@ -25,4 +25,5 @@
         - name = training
         project: "{{ project }}"
         auth_kind: serviceaccount
+      delegate_to: localhost
       
