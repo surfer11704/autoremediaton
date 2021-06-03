@@ -8,7 +8,7 @@
 
 - name: create a instance
   gcp_compute_instance:
-      name: "{{ name }}"
+      - name: "{{ name }}"
       machine_type: "{{ machineType }}"
       disks:
         - auto_delete: true
