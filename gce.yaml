@@ -15,3 +15,9 @@
         auth_kind: serviceaccount
         status: TERMINATED
       delegate_to: localhost
+      
+    - name: Stop easyTravel processses
+      command: /usr/bin/pkill -f 'java'
+      ignore_errors: yes
+      delegate_to: "{{ name }}"
+      
