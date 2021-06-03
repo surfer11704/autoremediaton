@@ -30,6 +30,6 @@
       
     - name: print all returned values
       debug:
-        msg: "{{ gcp }}"
+        msg: "{{ gcp.resources }}"
       
       
