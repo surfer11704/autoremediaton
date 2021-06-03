@@ -8,17 +8,18 @@
 
   tasks:
 
-#    - name: Start a GCP VM instance which is currently stopped
-#      gcp_compute_instance:
-##        name: "{{ name }}"
- #       deletion_protection: no
- #       machine_type: "{{ machineType }}"
- ##       zone: "{{ zone }}"
- #       project: "{{ project }}"
- #       auth_kind: serviceaccount
- #       status: TERMINATED
- #     delegate_to: localhost
-    - name: create a disk
+    - name: Start a GCP VM instance which is currently stopped
+      gcp_compute_instance:
+        name: "{{ name }}"
+        deletion_protection: no
+        machine_type: "{{ machineType }}"
+        zone: "{{ zone }}"
+        project: "{{ project }}"
+        auth_kind: serviceaccount
+        status: TERMINATED
+      delegate_to: localhost
+ 
+ - name: create a disk
       google.cloud.gcp_compute_disk:
         name: disk-instance
         size_gb: 50
