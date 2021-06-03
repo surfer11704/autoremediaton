@@ -1,6 +1,5 @@
 ---
 - name: Start a GCP instance which is currently stopped
-  strategy: debug
   hosts: easytravel-tmp
   gather_facts: false
 
