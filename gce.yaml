@@ -6,9 +6,18 @@
 
   tasks:
 
-  - name: detroy instance
-    gcp_compute_instance:
-      state: absent
-      name: "{{ name }}"
+- name: create a instance
+  gcp_compute_instance:
+      name: "{{ name }}""
+      machine_type: "{{ machineType }}""
+      disks:
+        - auto_delete: true
+          boot: true
+          source: "{{ source }}"
+      network_interfaces:
+          - network: "default"
       zone: "{{ zone }}"
       project: "{{ project }}"
+      scopes:
+        - https://www.googleapis.com/auth/compute
+      state: present
