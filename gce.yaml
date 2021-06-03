@@ -19,7 +19,7 @@
         status: TERMINATED
       delegate_to: localhost
  
- - name: create a disk
+    - name: create a disk
       google.cloud.gcp_compute_disk:
         name: disk-instance
         size_gb: 50
