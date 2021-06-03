@@ -38,11 +38,12 @@
         auth_kind: serviceaccount
         state: present
       delegate_to: localhost
-      register: disk    
+      register: network    
 
     - name: create a address
       google.cloud.gcp_compute_address:
         name: address-instance
+        region: europe-west4
         zone: "{{ zone }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
