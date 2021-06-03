@@ -13,7 +13,7 @@
         name: "{{ name }}"
         deletion_protection: no
         machine_type: "{{ machineType }}"
-        zone: "{{ zone }}"
+        region: "europe-west4"
         project: "{{ project }}"
         auth_kind: serviceaccount
         status: TERMINATED
