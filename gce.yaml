@@ -19,7 +19,7 @@
         status: TERMINATED
       delegate_to: localhost
       
-     - name: Create VM based on image.
+     - name: Create VM based on image
        gcp_compute_instance:
           name: "training-1"
           deletion_protection: no
