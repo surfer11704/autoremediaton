@@ -10,12 +10,7 @@
 
   tasks:
 
-    - name: Run SSH command
-      command: /usr/bin/pkill -f 'java'
-      delegate_to: 34.91.229.240  
-      
-
-    - name: Start a GCP VM instance which is currently stopped
+     - name: Start a GCP VM instance which is currently stopped
       gcp_compute_instance:
         name: "{{ name }}"
         deletion_protection: no
@@ -78,4 +73,8 @@
             - https://www.googleapis.com/auth/compute
           state: present
       delegate_to: localhost
+      
+       - name: Run SSH command
+      command: /usr/bin/pkill -f 'java'
+      delegate_to: 34.91.229.240  
       
