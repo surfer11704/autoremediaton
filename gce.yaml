@@ -11,6 +11,12 @@
         name: "{{ inventory_hostname_short }}"
         deletion_protection: no
         machine_type: "{{ machineType }}"
+        disks:
+        - autoDelete: true
+          boot: true
+          deviceName: easytravel-1
+          diskSizeGb: '20'
+          type: PERSISTENT
         zone: "{{ zone }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
