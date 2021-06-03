@@ -11,7 +11,6 @@
         name: "{{ inventory_hostname_short }}"
         deletion_protection: no
         machine_type: "{{ machineType }}"
-        disks: "{{ disks }}"
         network_interfaces:
           - network: "default"
         zone: "{{ zone }}"
