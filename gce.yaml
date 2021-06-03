@@ -34,7 +34,7 @@
     - name: create a network
       google.cloud.gcp_compute_network:
         name: network-instance
-        region: "{{ region }}"
+        region: europe-west4
         project: "{{ project }}"
         auth_kind: serviceaccount
         state: present
