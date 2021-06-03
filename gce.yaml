@@ -6,18 +6,23 @@
 
   tasks:
 
-  - name: create a instance
-    gcp_compute_instance:
-      - name: "{{ name }}"
+   - name: Shut down a GCP instance temporarily
+      gcp_compute_instance:
+        name: "{{ inventory_hostname_short }}"
+        deletion_protection: no
         machine_type: "{{ machineType }}"
         disks:
-        - auto_delete: true
-          boot: true
-          source: "{{ source }}"
+          - auto_delete: 'false'
+            boot: 'true'
+            source: "{{ disk }}"
         network_interfaces:
-          - network: "default"
+        - network:
+          access_configs:
+          - name: External NAT
+            nat_ip:
+            type: ONE_TO_ONE_NAT
         zone: "{{ zone }}"
         project: "{{ project }}"
-        scopes:
-          - https://www.googleapis.com/auth/compute
-        state: present
+        auth_kind: serviceaccount
+        status: TERMINATED
+      delegate_to: localhost
