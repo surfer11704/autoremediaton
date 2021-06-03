@@ -28,6 +28,7 @@
         project: "{{ project }}"
         auth_kind: serviceaccount
         state: present
+      delegate_to: localhost
       register: disk
       
     - name: create a instance
