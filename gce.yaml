@@ -10,7 +10,7 @@
       gcp_compute_instance:
         name: "{{ inventory_hostname_short }}"
         deletion_protection: no
-        machine_type: "{{ gcp_ce_machine_type }}"
+        machine_type: "{{ machine_type }}"
         zone: "{{ gcp_ce_zone }}"
         project: "{{ gcp_ce_project_name }}"
         auth_kind: serviceaccount
