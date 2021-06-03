@@ -6,8 +6,8 @@
 
   tasks:
 
-- name: create a instance
-  gcp_compute_instance:
+  - name: create a instance
+    gcp_compute_instance:
       - name: "{{ name }}"
         machine_type: "{{ machineType }}"
         disks:
