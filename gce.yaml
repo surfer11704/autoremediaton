@@ -1,5 +1,6 @@
 ---
 - name: Start a GCP instance which is currently stopped
+  strategy: debug
   hosts: easytravel-tmp
   gather_facts: false
 
@@ -8,6 +9,8 @@
     - name: Start a GCP VM instance which is currently stopped
       gcp_compute_instance:
         name: "{{ inventory_hostname_short }}"
+        deletion_protection: no
+        machine_type: "{{ machineType }}"
         zone: "{{ zone }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
