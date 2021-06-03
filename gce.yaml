@@ -21,8 +21,6 @@
       
     - name: get info on an image
       gcp_compute_image_info:
-        filters:
-        - name = training
         project: "{{ project }}"
         auth_kind: serviceaccount
       delegate_to: localhost
