@@ -13,7 +13,7 @@
         name: "{{ name }}"
         deletion_protection: no
         machine_type: "{{ machineType }}"
-        region: "europe-west4"
+        zone: "{{ zone }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
         status: TERMINATED
@@ -34,7 +34,7 @@
     - name: create a network
       google.cloud.gcp_compute_network:
         name: network-instance
-        zone: "{{ zone }}"
+        region: "{{ region }}"
         project: "{{ project }}"
         auth_kind: serviceaccount
         state: present
