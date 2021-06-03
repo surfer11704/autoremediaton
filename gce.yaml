@@ -10,9 +10,9 @@
       gcp_compute_instance:
         name: "{{ inventory_hostname_short }}"
         deletion_protection: no
-        machine_type: "{{ machine_type }}"
-        zone: "{{ gcp_ce_zone }}"
-        project: "{{ gcp_ce_project_name }}"
+        machine_type: "{{ machineType }}"
+        zone: "{{ zone }}"
+        project: "{{ project }}"
         auth_kind: serviceaccount
         service_account_file: "{{ gcp_ce_service_account_keyfile }}"
         status: RUNNING
