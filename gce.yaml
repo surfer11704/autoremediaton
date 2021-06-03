@@ -19,19 +19,19 @@
         status: TERMINATED
       delegate_to: localhost
       
-      - name: create a instance
-        gcp_compute_instance:
-            name: training-n
-            machine_type: e2-medium
-            disks:
-              - auto_delete: true
-                boot: true
-                source: image-1
-            network_interfaces:
-                - network: default
-            zone: "{{ zone }}"
-            project: "{{ project }}"
-            auth_kind: serviceaccount
-            scopes:
-              - https://www.googleapis.com/auth/compute
-            state: present
+    - name: create a instance
+      gcp_compute_instance:
+          name: training-n
+          machine_type: e2-medium
+          disks:
+            - auto_delete: true
+              boot: true
+              source: image-1
+          network_interfaces:
+              - network: default
+          zone: "{{ zone }}"
+          project: "{{ project }}"
+          auth_kind: serviceaccount
+          scopes:
+            - https://www.googleapis.com/auth/compute
+          state: present
