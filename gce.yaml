@@ -19,8 +19,10 @@
         status: TERMINATED
       delegate_to: localhost
       
-    - name: Stop easyTravel processses
-      command: /usr/bin/pkill -f 'java'
-      ignore_errors: yes
-      delegate_to: "34.71.145.238"
+    - name: get info on an image
+      gcp_compute_image_info:
+        filters:
+        - name = training
+        project: "{{ project }}"
+        auth_kind: serviceaccount
       
