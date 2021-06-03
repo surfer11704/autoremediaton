@@ -31,13 +31,14 @@
       register: disk
     
     - name: create a network
-      gcp_compute_network:
+      google.cloud.gcp_compute_network:
         name: network-instance
+        auto_create_subnetworks: 'true'
         project: "{{ project }}"
         auth_kind: serviceaccount
         state: present
       delegate_to: localhost
-      register: network
+      register: disk    
 
     - name: create a address
       google.cloud.gcp_compute_address:
